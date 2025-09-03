@@ -32,18 +32,25 @@ O **IA PI News Monitor** é um sistema desenvolvido em Python para coletar, proc
 ```bash
 # 1) Clonar o repositório
 git clone <seu-repo>.git
-cd ia-pi-news-monitor
+cd "C:\Users\SeuUsuario\local\ia-pi-news-monitor\ia-pi-news-monitor"
 
-# 2) Criar venv (opcional, recomendado)
+# 2) Criar o ambiente virtual (recomendado)
 python -m venv .venv
-.venv\Scripts\activate  # Windows
-# source .venv/bin/activate  # Linux / MacOS
 
-# 3) Instalar dependências
+# 3) Ativar o ambiente virtual
+# Windows PowerShell:
+.\.venv\Scripts\Activate.ps1
+# Linux/Mac:
+source .venv/bin/activate
+
+# 4) Atualizar o pip (opcional, mas recomendado)
+python -m pip install --upgrade pip
+
+# 5) Instalar todas as dependências
 pip install -r requirements.txt
 
-# 4) Executar a coleta/ETL
+# 6) Executar a coleta/ETL pela linha de comando (opcional)
 python -m src.pipeline
 
-# 5) Rodar o dashboard
+# 7) Rodar o dashboard Streamlit
 streamlit run app.py
